@@ -1,0 +1,29 @@
+body, html{
+    font-family: "Nanum Gothic", sans-serif !important;
+    font-size: 14px;
+    color: #333;
+    height: 100%;
+    margin: 0;
+}
+
+
+
+/* 스타일 시트에서 체크 박스와 라디오 버튼을 숨깁니다. */
+input[type=radio]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+/* 레이블을 배치하고 확인되지 않은 이미지를 표시합니다. */
+input[type=radio]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('checks.png') no-repeat 0 0;
+  line-height  : 24px;
+}
+/* 체크 박스와 라디오 버튼을 선택하면 선택한 이미지가 표시됩니다 */
+input[type=radio]:not(old):checked + label{
+  background-position : 0 -48px;
+}

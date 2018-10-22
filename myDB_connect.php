@@ -88,6 +88,6 @@
 	mysqli_close($link);
 
 	// 페이지 이동 (javascript)
-	echo("<script>location.href='/result_page.php';</script>");
+	echo("<script>location.href='./result_page.php';</script>");
 
 ?>
