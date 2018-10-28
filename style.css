@@ -6,7 +6,9 @@ body, html{
     margin: 0;
 }
 
-
+#wrap > div {
+  margin: 8px 0 8px 7px;
+}
 
 /* 스타일 시트에서 체크 박스와 라디오 버튼을 숨깁니다. */
 input[type=radio]:not(old){

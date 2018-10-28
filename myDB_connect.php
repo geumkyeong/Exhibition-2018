@@ -14,6 +14,8 @@
 	}
 
 	//변수 선언
+		$name = $_REQUEST['name'];
+
 		$e1 = $_REQUEST['e1'];
 		$e2 = $_REQUEST['e2'];
 		$e3 = $_REQUEST['e3'];
@@ -64,6 +66,8 @@
 		$p = $p1+$p2+$p3+$p4;
 
 	// DB에 데이터 입력
+		$query = "insert into user(name) values('$name')";
+		$result = mysqli_query($link, $query);
 		$query = "insert into e(e1, e2, e3, e4) values('$e1', '$e2', '$e3', '$e4')";
 		$result = mysqli_query($link, $query);
 		$query = "insert into i(i1, i2, i3, i4) values('$i1', '$i2', '$i3', '$i4')";
@@ -80,7 +84,22 @@
 		$result = mysqli_query($link, $query);
 		$query = "insert into p(p1, p2, p3, p4) values('$p1', '$p2', '$p3', '$p4')";
 		$result = mysqli_query($link, $query);
-		$query = "insert into r(e, i, s, n, t, f, j, p) values('$e', '$i', '$s', '$n', '$t', '$f', '$j', '$p')";
+
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'e', '$e')";
+		$result = mysqli_query($link, $query);
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'i', '$i')";
+		$result = mysqli_query($link, $query);
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 's', '$s')";
+		$result = mysqli_query($link, $query);
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'n', '$n')";
+		$result = mysqli_query($link, $query);
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 't', '$t')";
+		$result = mysqli_query($link, $query);
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'f', '$f')";
+		$result = mysqli_query($link, $query);
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'j', '$j')";
+		$result = mysqli_query($link, $query);
+		$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'p', '$p')";
 		$result = mysqli_query($link, $query);
 		//mysqli_query($link, "set names utf8");
 

@@ -27,10 +27,6 @@ function radio(json) {
 
 getUrlData(radio);
 
-// var checked = document.querySelector(`input[name="e1"]:checked`);
-// var genderSValue = genderSRadio ? genderSRadio.value : "";
-// console.log('checked', checked);
-
 function getUrlData(callback) {
   fetch('./data.json')
   .then(function(response){
