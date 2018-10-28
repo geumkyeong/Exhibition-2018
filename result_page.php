@@ -13,51 +13,49 @@
   }
 
   //result 테이블 보여주기
-  $query = "SELECT * FROM RESULT";
-  $result = mysqli_query($link, $query);
-
-  // mysqli_fetch_assoc() : 필드명 참조하여 Data불러오기
-  echo "<table border='1'><tr><th>name</th><th>category</th><th>result</th></tr>";
-  while($row = mysqli_fetch_assoc($result)){
-    echo "<tr>";
-    echo "<td>".$row['name']."</td>";
-    echo "<td>".$row['category']."</td>";
-    echo "<td>".$row['result']."</td>";
-    echo "</tr>";
-  }
-  echo "</table>";
+  // $query = "SELECT * FROM RESULT";
+  // $result = mysqli_query($link, $query);
+  //
+  // // mysqli_fetch_assoc() : 필드명 참조하여 Data불러오기
+  // echo "<table border='1'><tr><th>name</th><th>category</th><th>result</th></tr>";
+  // while($row = mysqli_fetch_assoc($result)){
+  //   echo "<tr>";
+  //   echo "<td>".$row['name']."</td>";
+  //   echo "<td>".$row['category']."</td>";
+  //   echo "<td>".$row['result']."</td>";
+  //   echo "</tr>";
+  // }
+  // echo "</table>";
 
   //user 테이블에서 name 가져오기
   $query = "SELECT name FROM USER";
   $result = mysqli_query($link, $query);
 
   $row = mysqli_fetch_assoc($result);
-  $name = $row[name];
-  echo $name;
+  $name = $row['name'];
+  //echo $name;
 
-  //result 테이블에서 user의 결과 중 상위 4개요소 추출하여 보여주기
-  $query = "SELECT category FROM RESULT WHERE name='$name' ORDER BY result DESC LIMIT 4";
+  //result 테이블에서 user의 결과 중 상대되는 범주끼리 서로 비교하여 상위 4개요소 추출하여 보여주기
+  $query = "SELECT category, result FROM RESULT WHERE name='$name' AND category IN('e','i') ORDER BY result DESC LIMIT 1";
   $result = mysqli_query($link, $query);
+  $row = mysqli_fetch_assoc($result);
+  $arr[0] = $row['category'];
 
-  echo "<table border='1'><tr><th>category</th></tr>";
+  $query = "SELECT category, result FROM RESULT WHERE name='$name' AND category IN('s','n') ORDER BY result DESC LIMIT 1";
+  $result = mysqli_query($link, $query);
+  $row = mysqli_fetch_assoc($result);
+  $arr[1] = $row['category'];
 
-  while($row = mysqli_fetch_assoc($result)){
-    echo "<tr>";
-    echo "<td>".$row['category']."</td>";
-    echo "</tr>";
+  $query = "SELECT category, result FROM RESULT WHERE name='$name' AND category IN('t','f') ORDER BY result DESC LIMIT 1";
+  $result = mysqli_query($link, $query);
+  $row = mysqli_fetch_assoc($result);
+  $arr[2] = $row['category'];
 
-    //상위 4개요소 이름 순서에 맞춰 정렬. 가령 값이 esjt이면, estj가 되도록 정렬.
-    if( strpos( $row['category'], "i" ) !== false ) $arr[0] = 'i';
-    if( strpos( $row['category'], "e" ) !== false ) $arr[0] = 'e';
-    if( strpos( $row['category'], "s" ) !== false ) $arr[1] = 's';
-    if( strpos( $row['category'], "n" ) !== false ) $arr[1] = 'n';
-    if( strpos( $row['category'], "t" ) !== false ) $arr[2] = 't';
-    if( strpos( $row['category'], "f" ) !== false ) $arr[2] = 'f';
-    if( strpos( $row['category'], "j" ) !== false ) $arr[3] = 'j';
-    if( strpos( $row['category'], "p" ) !== false ) $arr[3] = 'p';
-  }
+  $query = "SELECT category, result FROM RESULT WHERE name='$name' AND category IN('j','p') ORDER BY result DESC LIMIT 1";
+  $result = mysqli_query($link, $query);
+  $row = mysqli_fetch_assoc($result);
+  $arr[3] = $row['category'];
 
-  echo "</table>";
 
   //최종결과
   $r_str = $arr[0]."".$arr[1]."".$arr[2]."".$arr[3];
