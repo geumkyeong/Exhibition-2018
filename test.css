@@ -1,0 +1,184 @@
+*{ margin: 0; padding: 0; /* 모든 요소의 기본여백 없애기 */ }
+
+body {
+  background-color: #FFD85F;
+  overflow-y: hidden; overflow-x: hidden; /*스크롤바 숨김*/
+}
+
+a:link  { text-decoration: none; color: #5E5E5E }
+a:visited {  text-decoration: none; color: #5E5E5E }
+a:active {  text-decoration: none; color: #5E5E5E }
+a:hover { text-decoration: none; color:#F36798 }
+
+p { /*공통속성*/
+  font-family: 'Handlee', cursive;
+  font-weight: bold;
+}
+
+img {
+  vertical-align: top;
+}
+
+.container {
+  width: 1057px;
+  margin: 0 auto;
+  overflow: hidden;/* 세로길이 0이 되는 문제해결 */
+}
+
+.container > div {
+  float: left;
+}
+
+.center-container {
+  margin-left: 74px;
+  margin-right: 80px;
+}
+
+.center-container > p {
+  font-size: 40px;
+  padding:-200px 2px -100px 100px;
+  color: #FF8000;
+}
+
+.left-container > div, .center-container > div, .right-container > div {
+  position: relative; /* p의 부모요소 */
+}
+
+.left-container > div {
+  width: 180px;
+  height: 180px;
+  padding: 10px;
+}
+
+.center-container > div {
+  width: 600px;
+  height: 450px;
+}
+
+.right-container > div {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+}
+
+.left-container > div > p, .right-container > div > p {
+  visibility: hidden;
+  position: absolute; /* 부모요소에서 정렬 */
+  color: #000;
+  opacity: .3;
+
+  z-index: 1; /* img(0)의 위로 올라오게 */
+}
+
+.left-container > div > p {
+  font-size: 20px;
+  top: 90px;
+  left: 40px;
+}
+
+.right-container > div > p {
+  font-size: 14px;
+  top: 45px;
+  left: 16px;
+}
+
+.main-img {
+  width: 600px;
+  height: 450px;
+}
+
+.teststart-img, .guestbook-img {
+  width: 180px;
+  height: 180px;
+}
+
+.home-img, .creator-img, .source-img {
+  width: 80px;
+  height: 80px;
+}
+
+@media ( max-width: 768px ) {/*모바일화면에서의 변경사항*/
+  body {
+    overflow-y: visible; /*스크롤바 숨김 해제*/
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 605px;
+    min-width: 500px;
+  }
+
+  .left-container {
+    order: 2;
+    width: 200px;
+    height: 100px;
+    margin-left: 15px;
+  }
+  .center-container {
+    order: 3;
+    margin: 35px 10px;
+  }
+  .right-container {
+    order: 1;
+    width: 300px;
+    height: 100px;
+    margin-left: 50px;
+  }
+
+  .left-container > div, .right-container > div {
+    display: inline; /*요소들 줄 안바뀜*/
+  }
+
+  .left-container > div > p {
+    font-size: 14px;
+    top: 45px;
+    left: 5px;
+  }
+
+  .teststart-img, .guestbook-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+/* img.relative{
+position: relative;
+transform:translate(-130px,30px);
+width: 600px;
+height: 450px;
+}
+
+img.relative5{
+position: relative;
+transform:translate(-40px,-380px);
+width: 200px;
+height: 200px;
+}
+
+img.relative2{
+position: relative;
+transform:translate(1200px,-500px);
+width: 100px;
+height: 100px;
+}
+img.relative3{
+position: relative;
+transform:translate(900px,-300px);
+max-width: 100%;
+max-height: 100%;
+width: 90px;
+height: 90px;
+}
+img.relative4{
+position: relative;
+transform:translate(800px,-100px);
+width: 100px;
+height: 100px;
+}
+img.relative6{
+position: relative;
+transform:translate(-1050px,-80px);
+width: 200px;
+height: 200px;
+} */
