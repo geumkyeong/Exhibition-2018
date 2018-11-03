@@ -34,12 +34,6 @@ img {
   margin-right: 80px;
 }
 
-.center-container > p {
-  font-size: 60px;
-  padding:-200px 2px -100px 100px;
-  color: #FF8000;
-}
-
 .left-container > div, .center-container > div, .right-container > div {
   position: relative; /* p의 부모요소 */
 }
@@ -59,6 +53,13 @@ img {
   width: 125px;
   height: 125px;
   padding: 10px;
+}
+
+#welcome {
+  font-size: 60px;
+  color: #FF8000;
+  text-align: center;
+  padding:-200px 2px -100px 100px;
 }
 
 .left-container > div > p, .right-container > div > p {
@@ -116,7 +117,9 @@ img {
   body {
     overflow-y: visible; /*스크롤바 숨김 해제*/
   }
-
+  #welcome {
+    font-size: 40px;
+  }
   .container {
     display: flex;
     flex-direction: row;
@@ -142,58 +145,42 @@ img {
     margin-left: 50px;
   }
 
+  .center-container > div {
+    width: 600px;
+    height: 450px;
+  }
+
   .left-container > div, .right-container > div {
     display: inline; /*요소들 줄 안바뀜*/
   }
 
-  .left-container > div > p {
-    font-size: 14px;
-    top: 45px;
+  .left-container > div > p { font-size: 15px; }
+
+  #teststart {
+    top: 40px;
     left: 5px;
   }
+  #guestbook {
+    top: 40px;
+    left: 3px;
+  }
+  .right-container > div > p { font-size: 16px; }
 
-  .teststart-img, .guestbook-img {
+  #creator {
+    top: 40px;
+    left: 10px;
+  }
+  #source {
+    top: 42px;
+    left: 16px;
+  }
+
+  .main-img {
+    width: 600px;
+    height: 450px;
+  }
+  .teststart-img, .guestbook-img, .home-img, .creator-img, .source-img {
     width: 80px;
     height: 80px;
   }
 }
-/* img.relative{
-position: relative;
-transform:translate(-130px,30px);
-width: 600px;
-height: 450px;
-}
-
-img.relative5{
-position: relative;
-transform:translate(-40px,-380px);
-width: 200px;
-height: 200px;
-}
-
-img.relative2{
-position: relative;
-transform:translate(1200px,-500px);
-width: 100px;
-height: 100px;
-}
-img.relative3{
-position: relative;
-transform:translate(900px,-300px);
-max-width: 100%;
-max-height: 100%;
-width: 90px;
-height: 90px;
-}
-img.relative4{
-position: relative;
-transform:translate(800px,-100px);
-width: 100px;
-height: 100px;
-}
-img.relative6{
-position: relative;
-transform:translate(-1050px,-80px);
-width: 200px;
-height: 200px;
-} */
