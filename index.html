@@ -6,13 +6,18 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="header">
+      <p id="welcome">Welcome to 'Personnality Type Test'</p>
+    </div>
     <form action="./myDB_connect.php" method="_REQUEST">
-      <input type="text" name="name">
+      <div id="inputs">
+        <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+      </div>
       <div id="wrap"></div>
-      <!-- <button type="button" class="btn">더보기</button> -->
-      <input type='submit' value='제출' />
+      <div class="submit">
+        <input type='submit' value='제출' />
+      </div>
     </form>
-    <!-- <input type="radio" name="" value=""/><label></label> -->
     <script src="app.js"></script>
   </body>
 </html>

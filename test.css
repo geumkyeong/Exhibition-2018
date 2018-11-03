@@ -5,10 +5,7 @@ body {
   overflow-y: hidden; overflow-x: hidden; /*스크롤바 숨김*/
 }
 
-a:link  { text-decoration: none; color: #5E5E5E }
-a:visited {  text-decoration: none; color: #5E5E5E }
-a:active {  text-decoration: none; color: #5E5E5E }
-a:hover { text-decoration: none; color:#F36798 }
+a { text-decoration: none; }
 
 p { /*공통속성*/
   font-family: 'Handlee', cursive;
@@ -179,6 +176,7 @@ img {
     width: 600px;
     height: 450px;
   }
+  
   .teststart-img, .guestbook-img, .home-img, .creator-img, .source-img {
     width: 80px;
     height: 80px;
