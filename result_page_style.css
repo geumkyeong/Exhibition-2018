@@ -1,0 +1,10 @@
+*{ margin: 0; padding: 0; }
+
+body, html {
+  background-color: #FFD85F;
+  height: 100%;
+
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 20px;
+  color: #333;
+}
