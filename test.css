@@ -20,7 +20,7 @@ img {
 }
 
 .container {
-  width: 1057px;
+  width: 1470px;
   margin: 0 auto;
   overflow: hidden;/* 세로길이 0이 되는 문제해결 */
 }
@@ -30,12 +30,12 @@ img {
 }
 
 .center-container {
-  margin-left: 74px;
+  margin-left: 70px;
   margin-right: 80px;
 }
 
 .center-container > p {
-  font-size: 40px;
+  font-size: 60px;
   padding:-200px 2px -100px 100px;
   color: #FF8000;
 }
@@ -45,19 +45,19 @@ img {
 }
 
 .left-container > div {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   padding: 10px;
 }
 
 .center-container > div {
-  width: 600px;
-  height: 450px;
+  width: 900px;
+  height: 675px;
 }
 
 .right-container > div {
-  width: 80px;
-  height: 80px;
+  width: 125px;
+  height: 125px;
   padding: 10px;
 }
 
@@ -71,30 +71,45 @@ img {
 }
 
 .left-container > div > p {
-  font-size: 20px;
-  top: 90px;
+  font-size: 33px;
+}
+
+#teststart {
+  top: 110px;
   left: 40px;
 }
 
-.right-container > div > p {
-  font-size: 14px;
-  top: 45px;
-  left: 16px;
+#guestbook {
+  top: 110px;
+  left: 30px;
 }
 
+.right-container > div > p {
+  font-size: 22px;
+}
+
+#creator {
+  top: 60px;
+  left: 20px;
+}
+
+#source {
+  top: 60px;
+  left: 27px;
+}
 .main-img {
-  width: 600px;
-  height: 450px;
+  width: 900px;
+  height: 675px;
 }
 
 .teststart-img, .guestbook-img {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
 }
 
 .home-img, .creator-img, .source-img {
-  width: 80px;
-  height: 80px;
+  width: 125px;
+  height: 125px;
 }
 
 @media ( max-width: 768px ) {/*모바일화면에서의 변경사항*/
