@@ -6,11 +6,29 @@ body, html {
 
   font-family: "Nanum Gothic", sans-serif;
   font-size: 20px;
-  /* color: #333; */
   color: #FFFFFF;
+}
+
+p {
+  margin-top: 15px;
 }
 
 .container {
   width: 1000px;
   margin: 0 auto;
+  padding-top: 25px;
+}
+
+.content {
+  margin-top: 15px;
+}
+#welcome {
+  font-family: 'Handlee', cursive;
+  font-weight: bold;
+  font-size: 40px;
+  color: #FF8000;
+  text-align: center;
+  padding:-200px 2px -100px 100px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }

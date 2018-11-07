@@ -14,7 +14,7 @@
 	}
 
 	//변수 선언
-	$name = $_REQUEST['name'];//이름
+	$name = $_REQUEST['name'];
 
 	$e1 = $_REQUEST['e1']; $e2 = $_REQUEST['e2'];	$e3 = $_REQUEST['e3']; $e4 = $_REQUEST['e4'];
 
@@ -61,23 +61,25 @@
 	$query = "INSERT INTO p VALUES('$p1', '$p2', '$p3', '$p4')";
 	$result = mysqli_query($link, $query);
 
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'e', '$e')";
+//name 이 없으면 Insert하고 name이 있으면 Update하기
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 'e', '$e')";
 	$result = mysqli_query($link, $query);
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'i', '$i')";
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 'i', '$i')";
 	$result = mysqli_query($link, $query);
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 's', '$s')";
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 's', '$s')";
 	$result = mysqli_query($link, $query);
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'n', '$n')";
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 'n', '$n')";
 	$result = mysqli_query($link, $query);
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 't', '$t')";
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 't', '$t')";
 	$result = mysqli_query($link, $query);
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'f', '$f')";
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 'f', '$f')";
 	$result = mysqli_query($link, $query);
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'j', '$j')";
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 'j', '$j')";
 	$result = mysqli_query($link, $query);
-	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'p', '$p')";
+	$query = "INSERT INTO result(name, category, result) VALUES('$name', 'p', '$p')";
 	$result = mysqli_query($link, $query);
-	//(select name from user where name = '$name')
+
+//ALTER TABLE RESULT ADD UNIQUE (NAME);
 	// 접속 종료
 	mysqli_close($link);
 
