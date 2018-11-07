@@ -64,8 +64,11 @@
   $query = "UPDATE USER SET result='$r_str' WHERE name='$name'";
   $result = mysqli_query($link, $query);
 
+
   //결과 보여주기
-  echo "<h1>".$name." 님의 결과는 ".$r_str." 입니다.</h1><BR>";
+  echo "<div class='container'><h1>".$name." 님의 결과는 ".$r_str." 입니다.</h1><BR>";
+
+  echo "<img src='./MBTI성격유형.jpg'>";
 
   //결과에 해당하는 유형 데이터 출력.
   if( $r_str == 'istj' ){
@@ -163,6 +166,8 @@
     echo '<p>열성이 많고 솔직하고 단호하고 통솔력이 있다. 대중 연설과 같이 추리와 지적 담화가 요구되는 일이라면 어떤 것이든 능하다. 보통 정보에 밝고 지식에 대한 관심과 욕구가 많다. 때로는 실제의 자신보다 더 긍정적이거나 자신 있는 듯한 사람으로 비칠 때도 있다.</p>';
     echo '<p>독립적인 프로젝트를 추진할 수 있는 분야, 추진력과 통찰력, 분석력을 활용할 수 있는 분야 - 설계, 볍률, 경영관리, 군대장교, 지휘관, 자영업, 건축, 토목, 세일즈관리자, 컴퓨터 전문가 등</p>';
   }
-
+  // div 태그 닫기
+  echo "</div>";
+  
   mysqli_close($conn);
 ?>

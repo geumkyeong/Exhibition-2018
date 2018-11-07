@@ -14,7 +14,7 @@
 	}
 
 	//변수 선언
-	$name = $_REQUEST['name'];
+	$name = $_REQUEST['name'];//이름
 
 	$e1 = $_REQUEST['e1']; $e2 = $_REQUEST['e2'];	$e3 = $_REQUEST['e3']; $e4 = $_REQUEST['e4'];
 
@@ -61,18 +61,23 @@
 	$query = "INSERT INTO p VALUES('$p1', '$p2', '$p3', '$p4')";
 	$result = mysqli_query($link, $query);
 
-	$query = "INSERT INTO result
-	VALUES
-	((select name from user where name = '$name'), 'e', '$e'),
-	((select name from user where name = '$name'), 'i', '$i'),
-	((select name from user where name = '$name'), 's', '$s'),
-	((select name from user where name = '$name'), 'n', '$n'),
-	((select name from user where name = '$name'), 't', '$t'),
-	((select name from user where name = '$name'), 'f', '$f'),
-	((select name from user where name = '$name'), 'j', '$j'),
-	((select name from user where name = '$name'), 'p', '$p')";
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'e', '$e')";
 	$result = mysqli_query($link, $query);
-
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'i', '$i')";
+	$result = mysqli_query($link, $query);
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 's', '$s')";
+	$result = mysqli_query($link, $query);
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'n', '$n')";
+	$result = mysqli_query($link, $query);
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 't', '$t')";
+	$result = mysqli_query($link, $query);
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'f', '$f')";
+	$result = mysqli_query($link, $query);
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'j', '$j')";
+	$result = mysqli_query($link, $query);
+	$query = "insert into result(name, category, result) values((select name from user where name = '$name'), 'p', '$p')";
+	$result = mysqli_query($link, $query);
+	//(select name from user where name = '$name')
 	// 접속 종료
 	mysqli_close($link);
 
