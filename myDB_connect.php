@@ -42,7 +42,7 @@
 	$p = $p1 + $p2 + $p3 + $p4;
 
 // DB에 데이터 입력
-	$query = "INSERT INTO USER(name) VALUES('$name')";
+	$query = "INSERT INTO user(name) VALUES('$name')";
 	$result = mysqli_query($link, $query);
 	$query = "INSERT INTO e VALUES('$e1', '$e2', '$e3', '$e4')";
 	$result = mysqli_query($link, $query);

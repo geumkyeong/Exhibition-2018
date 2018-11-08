@@ -14,7 +14,7 @@
 
 
   //user 테이블에서 name 가져오기
-  $query = "SELECT name FROM USER";
+  $query = "SELECT name FROM USER ORDER BY num DESC LIMIT 1";
   $result = mysqli_query($link, $query);
 
   $row = mysqli_fetch_assoc($result);
@@ -25,6 +25,7 @@
   $result = mysqli_query($link, $query);
 
   // mysqli_fetch_assoc() : 필드명 참조하여 Data불러오기
+  //result DB 내용을 arr에 담기
   $arr = array();
   $i=0;
   while($row = mysqli_fetch_assoc($result)){
@@ -33,6 +34,7 @@
     $i = $i+2;
   }
 
+  //조건검사
   if($arr[13] > $arr[15]) // i > e
     $r_arr[0] = $arr[12];
   else
@@ -57,8 +59,17 @@
   //최종결과
   $r_str = $r_arr[0]."".$r_arr[1]."".$r_arr[2]."".$r_arr[3];
 
+
+  //user 테이블에서 사용자를 찾아 결과 저장
+  $query = "SELECT * FROM USER WHERE name='$name' ORDER BY num DESC LIMIT 1";
+  $result = mysqli_query($link, $query);
+
   //결과 저장(user table)
-  $query = "UPDATE USER SET result='$r_str' WHERE name='$name'";
+  $row = mysqli_fetch_assoc($result);
+  $num = $row['num'];
+
+  //결과 저장(user table)
+  $query = "UPDATE USER SET result='$r_str' WHERE num='$num'";
   $result = mysqli_query($link, $query);
 
   // echo "<p id='welcome'>Welcome to 'Personnality Type Test'</p>";
